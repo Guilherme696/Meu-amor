@@ -2,26 +2,15 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Nosso Cantinho ❤️</title>
 
-    <link
-        rel="stylesheet"
-        href="assets/css/style.css"
-    >
-
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-
 <body class="login-page">
-
 
     <main class="login-container">
 
@@ -31,23 +20,16 @@
                 ❤️
             </div>
 
-
-            <h1>
-                Nosso Cantinho
-            </h1>
-
+            <h1>Nosso Cantinho</h1>
 
             <p class="login-subtitle">
                 Esse lugar é só nosso...
             </p>
 
-
             <p class="login-text">
                 Antes de entrar, você precisa descobrir
-                a senha do nosso cantinho. ❤️
-                Dica: Que dia eu te pedi em namoro? 
+                a senha do nosso cantinho. 👀❤️
             </p>
-
 
             <input
                 type="password"
@@ -56,11 +38,9 @@
                 maxlength="20"
             >
 
-
             <button onclick="entrar()">
                 Entrar ❤️
             </button>
-
 
             <p id="mensagem-login"></p>
 
@@ -73,43 +53,33 @@
 
         function entrar() {
 
-            const senha =
-                document.getElementById("senha").value;
+            const senha = document.getElementById("senha").value;
 
-            const mensagem =
-                document.getElementById("mensagem-login");
-
+            const mensagem = document.getElementById("mensagem-login");
 
             if (senha === "01022026") {
 
                 mensagem.textContent =
                     "Acertou! Bem-vinda ao nosso cantinho, meu amor. ❤️";
 
-                mensagem.className =
-                    "login-sucesso";
-
+                mensagem.className = "login-sucesso";
 
                 setTimeout(function() {
-
-                    window.location.href = "home.html";
-
+                    window.location.href = "index.html";
                 }, 1500);
-
 
             } else {
 
                 mensagem.textContent =
                     "Hmm... essa não é a senha, amor. 😂❤️";
 
-                mensagem.className =
-                    "login-erro";
+                mensagem.className = "login-erro";
 
             }
 
         }
 
     </script>
-
 
 </body>
 
