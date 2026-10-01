@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz do Nosso Amor ❤️</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <a href="../index.html" class="logo">
+                Nosso Cantinho ❤️
+            </a>
+
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="historia.html">Nossa História</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="cartas.html">Cartinhas</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="page-intro">
+
+            <h1>Quiz do Nosso Amor ❤️</h1>
+
+            <p>
+                Vamos descobrir se você realmente lembra das coisas 
+                
+            </p>
+
+        </section>
+
+
+        <section class="quiz-container">
+
+
+            <!-- PERGUNTA 1 -->
+
+            <div class="quiz-card">
+
+                <h2>
+                    1. Que dia nós nos vimos pela primeira vez?
+                </h2>
+
+                <div class="quiz-options">
+
+                    <button onclick="responder(this, false, 1)">
+                        19 de outubro de 2025
+                    </button>
+
+                    <button onclick="responder(this, false, 1)">
+                        20 de outubro de 2025
+                    </button>
+
+                    <button onclick="responder(this, true, 1)">
+                        21 de outubro de 2025 
+                    </button>
+
+                    <button onclick="responder(this, false, 1)">
+                        23 de outubro de 2025
+                    </button>
+
+                </div>
+
+                <p class="quiz-feedback"></p>
+
+            </div>
+
+
+            <!-- PERGUNTA 2 -->
+
+            <div class="quiz-card">
+
+                <h2>
+                    2. O que eu mais gosto na minha namorada?
+                </h2>
+
+                <div class="quiz-options">
+
+                    <button onclick="responder(this, false, 2)">
+                        Seu jeito
+                    </button>
+
+                    <button onclick="responder(this, false, 2)">
+                        Seu carinho
+                    </button>
+
+                    <button onclick="responder(this, true, 2)">
+                        Seu sorriso 
+                    </button>
+
+                    <button onclick="responder(this, false, 2)">
+                        Seus olhos
+                    </button>
+
+                </div>
+
+                <p class="quiz-feedback"></p>
+
+            </div>
+
+
+            <!-- PERGUNTA 3 -->
+
+            <div class="quiz-card">
+
+                <h2>
+                    3. Quem disse "eu te amo" primeiro?
+                </h2>
+
+                <div class="quiz-options">
+
+                    <button onclick="responder(this, false, 3)">
+                        Eu
+                    </button>
+
+                    <button onclick="responder(this, true, 3)">
+                        Ela 
+                    </button>
+
+                    <button onclick="responder(this, false, 3)">
+                        Nós dois juntos
+                    </button>
+
+                    <button onclick="responder(this, false, 3)">
+                        Nenhum dos dois
+                    </button>
+
+                </div>
+
+                <p class="quiz-feedback"></p>
+
+            </div>
+
+
+            <!-- PERGUNTA 4 -->
+
+            <div class="quiz-card">
+
+                <h2>
+                    4. Que dia eu te pedi em namoro?
+                </h2>
+
+                <div class="quiz-options">
+
+                    <button onclick="responder(this, false, 4)">
+                        25 de janeiro de 2026
+                    </button>
+
+                    <button onclick="responder(this, false, 4)">
+                        31 de janeiro de 2026
+                    </button>
+
+                    <button onclick="responder(this, true, 4)">
+                        1 de fevereiro de 2026 
+                    </button>
+
+                    <button onclick="responder(this, false, 4)">
+                        2 de fevereiro de 2026
+                    </button>
+
+                </div>
+
+                <p class="quiz-feedback"></p>
+
+            </div>
+
+
+            <!-- PERGUNTA 5 -->
+
+            <div class="quiz-card">
+
+                <h2>
+                    5. Que dia você falou o primeiro "eu te amo"?
+                </h2>
+
+                <div class="quiz-options">
+
+                    <button onclick="responder(this, false, 5)">
+                        23 de outubro de 2025
+                    </button>
+
+                    <button onclick="responder(this, false, 5)">
+                        24 de outubro de 2025
+                    </button>
+
+                    <button onclick="responder(this, true, 5)">
+                        25 de outubro de 2025 
+                    </button>
+
+                    <button onclick="responder(this, false, 5)">
+                        26 de outubro de 2025
+                    </button>
+
+                </div>
+
+                <p class="quiz-feedback"></p>
+
+            </div>
+
+
+            <!-- RESULTADO -->
+
+            <div class="quiz-result">
+
+                <h2 id="resultado">
+                    Responda todas as perguntas 
+                </h2>
+
+                <p id="mensagem-final"></p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>Feito com amor para minha namorada</p>
+
+        <p>Nosso Cantinho — 2026</p>
+
+    </footer>
+
+
+    <script>
+
+        let acertos = 0;
+        let respondidas = 0;
+
+        const totalPerguntas = 5;
+
+
+        function responder(botao, correta, pergunta) {
+
+            const card = botao.closest(".quiz-card");
+
+            // Impede responder a mesma pergunta novamente
+            if (card.classList.contains("respondida")) {
+                return;
+            }
+
+            card.classList.add("respondida");
+
+            const botoes = card.querySelectorAll("button");
+
+            // Desativa todos os botões
+            botoes.forEach(function(item) {
+                item.disabled = true;
+            });
+
+
+            const feedback = card.querySelector(".quiz-feedback");
+
+
+            if (correta) {
+
+                botao.classList.add("correta");
+
+                acertos++;
+
+                feedback.innerHTML =
+                    "AcertoUUUUUUUUUU!!!!!!";
+
+                feedback.classList.add("feedback-correta");
+
+            } else {
+
+                botao.classList.add("errada");
+
+                // Mostra a resposta correta
+                botoes.forEach(function(item) {
+
+                    const onclick = item.getAttribute("onclick");
+
+                    if (onclick && onclick.includes("true")) {
+                        item.classList.add("correta");
+                    }
+
+                });
+
+
+                const comentarios = {
+
+                    1: "Amor, essa data era para estar gravada no coração!",
+
+                    2: "COMO ASSIM???",
+
+                    3: "Vamos ter que refazer tudo dnv",
+
+                    4: "AIAIAI",
+
+                    5: "Aí você me quebra..."
+
+                };
+
+
+                feedback.innerHTML =
+                    "Resposta errada! 😭<br>" +
+                    "<strong>Resposta correta:</strong> veja a opção destacada acima.<br><br>" +
+                    comentarios[pergunta];
+
+                feedback.classList.add("feedback-errada");
+
+            }
+
+
+            respondidas++;
+
+
+            if (respondidas === totalPerguntas) {
+
+                mostrarResultado();
+
+            }
+
+        }
+
+
+        function mostrarResultado() {
+
+            const resultado = document.getElementById("resultado");
+
+            const mensagem = document.getElementById("mensagem-final");
+
+
+            resultado.innerHTML =
+                "Você acertou " + acertos + " de " + totalPerguntas + "! ❤️";
+
+
+            if (acertos === 5) {
+
+                mensagem.innerHTML =
+                    "PERFEITA! 😍❤️<br><br>" +
+                    "Você realmente conhece a nossa história. " +
+                    "Acho que vou ter que te dar um prêmio por isso. 😂❤️";
+
+            } else if (acertos >= 3) {
+
+                mensagem.innerHTML =
+                    "Até que você foi bem! 😂❤️<br><br>" +
+                    "Mas ainda temos algumas memórias para relembrar juntos.";
+
+            } else {
+
+                mensagem.innerHTML =
+                    "MEU DEUS! 😂😭❤️<br><br>" +
+                    "Acho que vamos ter que sentar juntos e relembrar " +
+                    "toda a nossa história novamente. 😂";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

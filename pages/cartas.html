@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cartinhas </title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+
+            <a href="../index.html" class="logo">
+                Nosso Cantinho ❤️
+            </a>
+
+            <ul>
+                <li><a href="historia.html">Nossa História</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="cartas.html">Cartinhas</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="page-intro">
+
+            <h1>💌 Nossas Cartinhas</h1>
+
+            <p>
+                Algumas palavras para você abrir nos momentos
+                em que mais precisar de um pouquinho do meu amor. ❤️
+            </p>
+
+        </section>
+
+
+        <section class="letters-container">
+
+
+            <!-- CARTA 1 -->
+
+            <div class="letter-card">
+
+                <div class="letter-cover">
+
+                    <span class="letter-icon">🥺❤️</span>
+
+                    <h2>Abra quando estiver com saudade</h2>
+
+                    <button onclick="abrirCarta(1)">
+                        Abrir cartinha 💌
+                    </button>
+
+                </div>
+
+                <div class="letter-content" id="carta1" hidden>
+
+                    <p>
+                        Amor, eu não estou ao seu lado nesse momento,
+                        mas o meu amor por você é tão grande que,
+                        quando você estiver morrendo de saudades de mim,
+                        ele sai correndo daqui de casa e vai até você,
+                        só para te deixar calma e tranquila.
+                    </p>
+
+                    <p>
+                        Eu te amo muitão!! ❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARTA 2 -->
+
+            <div class="letter-card">
+
+                <div class="letter-cover">
+
+                    <span class="letter-icon">🥺💕</span>
+
+                    <h2>Abra quando estiver triste</h2>
+
+                    <button onclick="abrirCarta(2)">
+                        Abrir cartinha 💌
+                    </button>
+
+                </div>
+
+                <div class="letter-content" id="carta2" hidden>
+
+                    <p>
+                        Amor, sei que às vezes as coisas não são tão fáceis,
+                        mas saiba que sempre estarei ao seu lado.
+                    </p>
+
+                    <p>
+                        Sempre vou cuidar de você e te amar.
+                        Vou ser o seu porto seguro.
+                        Conte sempre comigo, meu amor. ❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARTA 3 -->
+
+            <div class="letter-card">
+
+                <div class="letter-cover">
+
+                    <span class="letter-icon">😂❤️</span>
+
+                    <h2>Abra quando quiser lembrar de mim</h2>
+
+                    <button onclick="abrirCarta(3)">
+                        Abrir cartinha 💌
+                    </button>
+
+                </div>
+
+                <div class="letter-content" id="carta3" hidden>
+
+                    <p>
+                        Quando quiser lembrar de mim???
+                    </p>
+
+                    <p>
+                        PQQQQQQ?? Me esqueceuuu???? 
+                    </p>
+
+                    <p>
+                        Tô brincando!
+                    </p>
+
+                    <p>
+                        EU TE AMO MUITÃO, AMOR! ❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <section class="letters-final">
+
+            <h2> Sempre que precisar de mim...</h2>
+
+            <p>
+                É só abrir uma dessas cartinhas e lembrar que
+                eu sempre vou estar aqui para você.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>Feito com amor para mnha namorada ❤️</p>
+
+        <p>Nosso Cantinho — 2026</p>
+
+    </footer>
+
+
+    <script>
+
+        function abrirCarta(numero) {
+
+            const carta = document.getElementById("carta" + numero);
+            const botao = carta.previousElementSibling.querySelector("button");
+
+            if (carta.hidden) {
+
+                carta.hidden = false;
+                botao.textContent = "Fechar cartinha 💌";
+
+            } else {
+
+                carta.hidden = true;
+                botao.textContent = "Abrir cartinha 💌";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
